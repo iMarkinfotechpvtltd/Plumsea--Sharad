@@ -49,20 +49,33 @@ jQuery(document).ready(function() {
 		if(!empty($foot1))
 			{
 		?>
-				<img src="<?php echo $url= $foot1[0]?>" alt="Footwear Image1" />
+				<img src="<?php echo $url= $foot1[0]?>" alt="<?php the_title(); ?>" />
 		<?php
 			}
 			else
 			{
 		?>	
-				<img src="http://placehold.it/706x648&amp;text=No image found" alt="<?php the_title(); ?>" />
+				<img src="http://i.imgur.com/VXkhhR6.png" alt="<?php the_title(); ?>" />
 		<?php	
 			}
+		
+			  $patent1_heading=get_field('patent_number-1_heading',$post->ID);
+		      if(!empty($patent1_heading))
+			  {
 		?>
        
         <div class="pattent-number"><p><?php the_field('patent_number-1_heading',$post->ID);?></p></div>
 					
-					<?php the_field('patent_number-1_description',$post->ID);?> 
+					<?php
+              }//end if
+              			
+						//getting content						
+					     $patent_number1=get_field('patent_number-1_description',$post->ID);
+						 if(!empty($patent_number1))
+						 {
+							 echo $patent_number1;
+						 }
+					?> 
        </div>
        
        <div class="col-xs-12">
@@ -74,22 +87,32 @@ jQuery(document).ready(function() {
 		if(!empty($foot2))
 			{
 		?>
-				<img src="<?php echo $url= $foot2[0]?>" alt="Footwear Image2" />
+				<img src="<?php echo $url= $foot2[0]?>" alt="<?php the_title(); ?>" />
 		<?php
 			}
 			else
 			{
 		?>	
-				<img src="http://placehold.it/706x648&amp;text=No image found" alt="<?php the_title(); ?>" />
+				<img src="http://i.imgur.com/VXkhhR6.png " alt="<?php the_title(); ?>" />
 		<?php	
 			}
+			
+			 $patent2_heading=get_field('patent_number-2_heading',$post->ID);
+		      if(!empty($patent2_heading))
+			  {
 		?>
-		
-		
-		
-        <div class="pattent-number"><p><?php the_field('patent_number-2_heading',$post->ID);?></p></div>
+				<div class="pattent-number"><p><?php the_field('patent_number-2_heading',$post->ID);?></p></div>
         
-					<?php the_field('patent_number-2_description',$post->ID);?> 
+					<?php 
+			  }//end if
+					
+					     //getting content
+					     $patent_number2=get_field('patent_number-2_description',$post->ID);
+						 if(!empty($patent_number2))
+						 {
+							 echo $patent_number2;
+						 }
+					?> 
                
        </div>
        
@@ -102,27 +125,39 @@ jQuery(document).ready(function() {
 			if(!empty($foot3))
 			{
 		?>
-				<img src="<?php echo $url= $foot3[0]?>" alt="Footwear Image3" />
+				<img src="<?php echo $url= $foot3[0]?>" alt="<?php the_title(); ?>" />
 		<?php
 			}
 			else
 			{
 		?>	
-				<img src="http://placehold.it/706x648&amp;text=No image found" alt="<?php the_title(); ?>" />
+				<img src="http://i.imgur.com/VXkhhR6.png" alt="<?php the_title(); ?>" />
 		<?php	
 			}
+		
+			
+			  $patent3_heading=get_field('patent_number-3_heading',$post->ID);
+		      if(!empty($patent3_heading))
+			  {
 		?>
-		
-		
-        <div class="pattent-number"><p><?php the_field('patent_number-3_heading',$post->ID);?></p></div>
+				<div class="pattent-number"><p><?php the_field('patent_number-3_heading',$post->ID);?></p></div>
         
-			<?php the_field('patent_number-3_description',$post->ID);?> 
+			      <?php
+			  }//end if	
+
+                 //getting content 			  
+					 $patent_number3=get_field('patent_number-3_description',$post->ID);
+					 if(!empty($patent_number3))
+					 {
+						 echo $patent_number3;
+					 }
+					?> 
                
        </div>
 	   
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 				Enquire Now
-		</button>
+		</button>-->
 	   
 	   
      </div> 

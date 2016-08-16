@@ -428,6 +428,10 @@ function my_loginlogo() {
  echo '<style type="text/css">
    h1 a {
      background-image: url(' . get_template_directory_uri() . '/images/logo.png) !important;
+	background-size: 100% !important;
+    -webkit-background-size: 100% !important;
+	width: 100% !important;
+    height: 60px !important;
    }
  </style>';
 }

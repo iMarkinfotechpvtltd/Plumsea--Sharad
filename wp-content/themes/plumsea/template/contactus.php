@@ -4,7 +4,15 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header(); 
+
+global $post;
+
+// echo '<pre>';
+// print_r($post);
+// echo '</pre>';
+// die;
+?>
 
 
   <div class="container"> 
@@ -12,7 +20,7 @@
        
         <a class="logo" href="<?php echo site_url();?>"><img src="<?php echo get_option_tree('logo_image');?>" alt="Logo Image" /></a>
       
-       <h1><?php the_field('contact_us_heading',11)?></h1>
+       <h1><?php the_field('contact_us_heading',$post->ID);?></h1>
      
     </header>  <!--header-section close-->  
   </div> <!--container-->
@@ -24,7 +32,7 @@
       <div class="embed-responsive embed-responsive-16by9 border">
 	    
 		<?php 
-			$location1 = get_field('contact_us_map_1',11);	
+			$location1 = get_field('contact_us_map_1',$post->ID);	
 			if( !empty($location1) ):	
 			 ?>
 			<div class="acf-map">
@@ -35,10 +43,10 @@
 	  
       </div> <!--embed-responsive-->
      <div class="address-content"> 
-		<?php the_field('contact_us_map_1_address',11);?>
+		<?php the_field('contact_us_map_1_address',$post->ID);?>
       
-		<a href="tel:+<?php the_field('contact_us_map_1_address_phone',11);?>">v: <?php the_field('contact_us_map_1_address_phone',11);?></a>
-        <p class="fax">f: <?php the_field('contact_us_map_1_address_faxno',11);?></p> 
+		<a href="tel:+<?php the_field('contact_us_map_1_address_phone',$post->ID);?>">v: <?php the_field('contact_us_map_1_address_phone',$post->ID);?></a>
+        <p class="fax">f: <?php the_field('contact_us_map_1_address_faxno',$post->ID);?></p> 
      </div>   
      </div> <!--col-xs-6 col-md-6-->
      
@@ -47,7 +55,7 @@
 		  
 		  
             <?php 
-				$location2 = get_field('contact_us_map_2',11);	
+				$location2 = get_field('contact_us_map_2',$post->ID);	
 				if( !empty($location2) ):	
 			 ?>
 				<div class="acf-map">
@@ -61,16 +69,50 @@
          
          <div class="address-content">
          
-         <?php the_field('contact_us_map_2_address',11);?>
+         <?php the_field('contact_us_map_2_address',$post->ID);?>
 
 
-          <a href="tel:+<?php the_field('contact_us_map_2_address_phone',11);?>">v: <?php the_field('contact_us_map_2_address_phone',11);?></a>
-          <p class="fax">f: <?php the_field('contact_us_map_2_address_faxno',11);?></p> 
+          <a href="tel:+<?php the_field('contact_us_map_2_address_phone',$post->ID);?>">v: <?php the_field('contact_us_map_2_address_phone',$post->ID);?></a>
+          <p class="fax">f: <?php the_field('contact_us_map_2_address_faxno',$post->ID);?></p> 
         </div> <!--addres-cotent--> 
      </div> <!--col-xs-6 col-md-6-->
    </div>
   </div>  
  </section> 
+  
+  <!--CONTACT FORM SECTION-->
+ <section class="form-section">
+   <div class="container">
+     <div class="form-inner-div">
+      <h3>Contact Form</h3>
+     <div class="row">
+      <?php echo do_shortcode('[contact-form-7 id="122" title="Contact form"]'); ?>
+	  <!--<form>
+       <div class="col-xs-12 col-md-6">
+         <span class="user-name"><i aria-hidden="true" class="fa fa-user fa-6"></i> Name</span>
+         <input type="text" class="form-control" placeholder="Name">
+       </div> <!--col-xs-12-->
+       <!--<div class="col-xs-12 col-md-6">
+         <span class="user-name"><i class="fa fa-envelope" aria-hidden="true"></i>Email</span>
+         <input type="text" class="form-control" placeholder="Email">
+       </div> <!--col-xs-12-->
+       <!--<div class="col-xs-12 col-md-6">
+         <span class="user-name"><i class="fa fa-mobile" aria-hidden="true"></i>Phone</span>
+         <input type="text" class="form-control" placeholder="Phone">
+       </div> <!--col-xs-12-->
+       <!--<div class="col-xs-12">
+         <span class="user-name"><i class="fa fa-envelope" aria-hidden="true"></i>Message</span>
+         <textarea class="form-control" placeholder="Message"></textarea>
+       </div> <!--col-xs-12-->
+       <!--<div class="col-xs-12">
+         <button type="submit" class="btn btn-danger btn-form">Send</button>
+       </div> <!--col-xs-12-->
+      <!--</form>-->
+     
+	 </div> <!--row-->
+    </div> <!--fomr-inner-div--> 
+   </div> <!--container-->
+ </section>
 
 
 <!--**************START SCRIPT FOR GOOGLE MAP*****************-->

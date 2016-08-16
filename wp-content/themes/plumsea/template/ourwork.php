@@ -4,7 +4,15 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header(); 
+
+global $post;
+
+// echo '<pre>';
+// print_r($post);
+// echo '</pre>';
+// die;
+?>
 
 <div class="container"> 
     <header class="header-section">  
@@ -12,8 +20,8 @@
 	 
         <a class="logo" href="<?php echo site_url();?>"><img src="<?php echo get_option_tree('logo_image');?>" alt="Logo Image" /></a>
       
-      <h1><?php the_field('our_work_heading',10)?></h1>
-		  <?php the_field('our_work_description',10)?>
+      <h1><?php the_field('our_work_heading',$post->ID);?></h1>
+		  <?php the_field('our_work_description',$post->ID);?>
       
     </header>  <!--header-section close-->
     

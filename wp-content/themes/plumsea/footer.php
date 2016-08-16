@@ -45,7 +45,7 @@
  </div>   
  
 <div class="copy-right">
-   <p>© COPYRIGHT <?php echo date('Y')?> Plumsea Law.Group ALL RIGHTS RESERVED <span class="barnding">Powered By: <a href="">iMark <span>I</span>nfotech</a></span></p>
+   <p>© COPYRIGHT <?php echo date('Y')?>  <?php echo get_option_tree('footer_copyright_section');?> <span class="barnding">Powered By: <a target="_blank" href="https://www.imarkinfotech.com">iMark <span>I</span>nfotech</a></span></p>
 
 </div> <!--copy-right-->
  </div>
@@ -149,10 +149,60 @@ jQuery(document).ready(function() {
 
 </script>
 
+<script>
 
+jQuery('.btn-form').click(function(){
+	
+   setTimeout(function(){ jQuery('.wpcf7-validation-errors').fadeOut('slow'); }, 7000);
+   setTimeout(function(){ jQuery('.wpcf7-mail-sent-ok').fadeOut('slow'); }, 7000);
+});
+</script>
 
 <!--**************************** End of Script use for enter number only in (PhoneNumber) Text box ********************-->
 
+
+<!--************************************ Start Script use for enter Alphabets only in (Name) Text box********************-->
+<script type="text/javascript">
+jQuery(document).ready(function(){
+jQuery.noConflict();
+   jQuery("input[name='Name']").keypress(function(event){
+       var inputValue = event.which;
+       // allow letters and whitespaces only.
+       if((inputValue > 33 && inputValue < 64) || (inputValue > 90 && inputValue < 97 ) || (inputValue > 123 && inputValue < 126)
+&& (inputValue != 32)){
+           event.preventDefault();
+       }
+   });
+});
+</script>
+
+<!--************************************ End of Script use for enter Alphabets only in (Name) Text box********************-->
+
+<!--**************************** Start Script use for enter number only in (PhoneNumber) Text box ********************-->
+
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+  jQuery("input[name='Contact']").keydown(function (e) {
+      // Allow: backspace, delete, tab, escape, enter and .
+      if (jQuery.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+           // Allow: Ctrl+A, Command+A
+          (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) || 
+           // Allow: home, end, left, right, down, up
+          (e.keyCode >= 35 && e.keyCode <= 40)) {
+               // let it happen, don't do anything
+               return;
+      }
+      // Ensure that it is a number and stop the keypress
+      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+          e.preventDefault();
+      }
+  });
+});
+
+</script>
+
+<!--**************************** End of Script use for enter number only in (PhoneNumber) Text box ********************-->
 
 <!--************************************ END OF SCRIPT ADD BY DEVELOPER **************************************-->  
 <?php wp_footer(); ?>
