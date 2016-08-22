@@ -142,8 +142,10 @@ h1, h2, h3, h4, h5, h6, h7{
 }
 
 .logo {
-  display: inline-block;
-  margin: 0 0 60px;
+    display: inline-block;
+    margin: 0 0 60px;
+	max-width:100%;
+    width: 700px;
 }
 .header-section h1 {
   color: #454545;
@@ -334,6 +336,7 @@ h1, h2, h3, h4, h5, h6, h7{
 
 .biography {
   background-color: #fff;
+  border-bottom:1px solid #52134f;
   display: block;
   padding: 20px 40px 70px;
 }
@@ -347,7 +350,6 @@ h1, h2, h3, h4, h5, h6, h7{
 .biography p {
   color: #454545;
   font-size: 16px;
-  font-weight: 300;
   line-height: 40px;
   margin: 0 0 30px;
 }
@@ -357,7 +359,7 @@ h1, h2, h3, h4, h5, h6, h7{
  }
 .content-box > ul li {
   font-size: 16px;
-  font-weight: 300;
+  /*font-weight: 300;*/
   margin-bottom: 8px;
   padding-left: 15px;
   position:relative;
@@ -369,7 +371,7 @@ h1, h2, h3, h4, h5, h6, h7{
 .mail-d {
   display: block;
   font-size: 16px;
-  font-weight: 300;
+  /*font-weight: 300;*/
   margin: 15px 0;
 }
 .content-box > ul li::before {
@@ -617,8 +619,8 @@ h1, h2, h3, h4, h5, h6, h7{
 }
 
 .barnding{
-  font-family: 'GothamLight';
-  font-size:13px;	
+/*  font-family: 'GothamLight';
+*/  font-size:13px;	
  }
 .barnding a {
 	color:#52134f;
@@ -630,7 +632,7 @@ h1, h2, h3, h4, h5, h6, h7{
   opacity:1;	
  } 
 .barnding a span{
-  font-family: 'GoudyOldStyleT-Regular'; } 
+ /* font-family: 'GoudyOldStyleT-Regular';*/ } 
   
 .form-inner-div {
   background-color: #fff;
@@ -772,7 +774,15 @@ section.error-404-page p{
 section.error-404-page .page-content {
     margin: 0;
 }
-
+div.wpcf7 {
+    position: relative;
+}
+.wpcf7-response-output {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+	right:0;
+}
 
 
 /********************************************
@@ -853,7 +863,15 @@ section.error-404-page .page-content {
    } 
   .header-section.contact {
     padding-bottom: 40px;
-  }  
+  } 
+ .wpcf7-response-output {
+    position:static;
+ }
+section.error-404-page {
+    padding-top: 270px;
+    margin-bottom: 70%;
+} 
+   
 
 }  
 
@@ -934,7 +952,24 @@ section.error-404-page .page-content {
     margin: 10px 0 20px;
 	padding:10px 0;
  }
-    
+.mid-caption {
+    margin-bottom: -30px;
+    position: absolute;
+}
+section.error-404-page {
+    padding-top: 70px;
+    margin-bottom: 42%;
+} 
+section.error-404-page h1 {
+    font-size: 60px;
+}  
+section.error-404-page h1 span {
+    display: block;
+    font-size: 30px;
+}
+section.error-404-page p {
+    font-size: 18px;
+}  
   	
 }  
 
@@ -948,7 +983,22 @@ section.error-404-page .page-content {
   }	
  
  }  
+
+@media(orientation: landscape) {
+ @media(max-width:480px){
+    section.error-404-page {
+      padding-top: 30px;
+      margin-bottom: 90%;
+    }
+  	 
+  }
+ 
   
+} 
+  
+/**********************
+ LADNSCAPE
+ ********************/  
   
 @media(max-width:480px){
   .header-section h1 {
@@ -1068,6 +1118,10 @@ table.table-site tr:last-child{
 }
 .footwear .col-xs-12 {
     margin-bottom: 15px;
+}
+section.error-404-page {
+    padding-top: 70px;
+    margin-bottom: 145%;
 }
   
 	

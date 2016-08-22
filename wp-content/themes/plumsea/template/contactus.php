@@ -86,29 +86,9 @@ global $post;
      <div class="form-inner-div">
       <h3>Contact Form</h3>
      <div class="row">
+	 
       <?php echo do_shortcode('[contact-form-7 id="122" title="Contact form"]'); ?>
-	  <!--<form>
-       <div class="col-xs-12 col-md-6">
-         <span class="user-name"><i aria-hidden="true" class="fa fa-user fa-6"></i> Name</span>
-         <input type="text" class="form-control" placeholder="Name">
-       </div> <!--col-xs-12-->
-       <!--<div class="col-xs-12 col-md-6">
-         <span class="user-name"><i class="fa fa-envelope" aria-hidden="true"></i>Email</span>
-         <input type="text" class="form-control" placeholder="Email">
-       </div> <!--col-xs-12-->
-       <!--<div class="col-xs-12 col-md-6">
-         <span class="user-name"><i class="fa fa-mobile" aria-hidden="true"></i>Phone</span>
-         <input type="text" class="form-control" placeholder="Phone">
-       </div> <!--col-xs-12-->
-       <!--<div class="col-xs-12">
-         <span class="user-name"><i class="fa fa-envelope" aria-hidden="true"></i>Message</span>
-         <textarea class="form-control" placeholder="Message"></textarea>
-       </div> <!--col-xs-12-->
-       <!--<div class="col-xs-12">
-         <button type="submit" class="btn btn-danger btn-form">Send</button>
-       </div> <!--col-xs-12-->
-      <!--</form>-->
-     
+	  
 	 </div> <!--row-->
     </div> <!--fomr-inner-div--> 
    </div> <!--container-->
